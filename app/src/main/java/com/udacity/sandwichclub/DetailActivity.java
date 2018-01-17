@@ -3,7 +3,9 @@ package com.udacity.sandwichclub;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -68,14 +70,23 @@ public class DetailActivity extends AppCompatActivity {
         TextView originTv = (TextView) findViewById(R.id.origin_tv);
         originTv.setText(sandwich.getPlaceOfOrigin());
 
+        LinearLayout alsoKnownAsLinearLayout = (LinearLayout) findViewById(R.id.also_known_as_linear_layout);
         TextView alsoKnownAsTv = (TextView) findViewById(R.id.also_known_tv);
-        alsoKnownAsTv.setText(list2String(sandwich.getAlsoKnownAs()));
+
+        // If "also known as" is empty for a particular sandwich then make that layout invisible
+        if (list2String(sandwich.getAlsoKnownAs()).toString().equals("")) {
+            alsoKnownAsLinearLayout.setVisibility(View.INVISIBLE);
+        } else {
+            alsoKnownAsTv.setText(list2String(sandwich.getAlsoKnownAs()));
+        }
+
 
         TextView ingredientsTv = (TextView) findViewById(R.id.ingredients_tv);
         ingredientsTv.setText(list2String(sandwich.getIngredients()));
 
         TextView descriptionTv = (TextView) findViewById(R.id.description_tv);
         descriptionTv.setText(sandwich.getDescription());
+
 
     }
 
