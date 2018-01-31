@@ -1,12 +1,11 @@
-# Sandwich Club Project Starter Code
+# Android Developer NanoDegree by Google 1st project
 
 ## Project Overview
-In this project, I completed the **Sandwich Club** app to
-show the details of each sandwich once it is selected.
+In this project, I completed the **Sandwich Club** app by building a layout
+and populating its fields from data received as JSON
 
 
 
-## How Do I Complete this Project?
-Download the [Sandwich Club app starter code.](https://github.com/udacity/sandwich-club-starter-code)
+
 
 
